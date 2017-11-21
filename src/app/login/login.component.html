@@ -1,0 +1,16 @@
+<div *ngIf="!(loginService.user | async)">
+  <h1> Inloggen </h1>
+  <div class="input">
+    <label>Email: </label>
+    <input type="text" [(ngModel)]="email" placeholder="email">
+  </div>
+  <div class="input">
+    <label> Password: </label>
+    <input type="password" [(ngModel)]="password" placeholder="password">
+  </div>
+  <div class="submit">
+    <button (click)="login()" [disabled]="!email || !password">Login</button>
+    <span class="bold-red">{{loginService.errormsg}}</span>
+  </div>
+</div>
+

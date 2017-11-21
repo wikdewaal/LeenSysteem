@@ -1,0 +1,24 @@
+<div>
+  <h1> Hardware Overzicht </h1>
+</div>
+
+<div>
+    <table class="table-hover">
+        <tr>
+            <th>Select</th>
+            <th>Naam</th>
+            <th>Hardware</th>
+            <th>Voorraad</th>
+        </tr>
+        <tr *ngFor="let item of items | async" onmouseover="">
+            <td><input type="checkbox" value="{{item.key}}" (click)="CheckBoxCheck(item.naam, item.type, 1, item.key)" [disabled]="checkVoorraad(item.key, item.aantal)" /></td>
+            <td>{{item.naam}}</td>
+            <td>{{item.beschrijving}}</td>
+            <td>{{item.aantal}}</td>
+        </tr>
+    </table>
+    <button class="button1" (click)="reserverenHardware()">Reserveren</button>
+</div>
+
+
+

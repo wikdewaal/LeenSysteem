@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-8">
+      <h1>Uitgeleende hardware</h1>
+    </div>
+  </div>
+
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-8">
+      <table class="table table-bordered">
+        <thead class="thead-default">
+        <tr>
+          <th>Gebruiker</th>
+          <th>Aantal stukken hardware</th>
+          <th>Options</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of totalList" >
+          <td>{{ item.username }}</td>
+          <td>{{ item.countedItems }}</td>
+
+          <td><button>Bekijken</button> &nbsp;<button (click)="doorSturen(item.userKey, item.username)">Terugbrengen</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

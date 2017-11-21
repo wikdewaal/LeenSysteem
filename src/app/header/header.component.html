@@ -1,0 +1,7 @@
+<ul>
+  <li><a routerLink="/"> Home</a></li>
+  <li><a routerLink="/admin" *ngIf="app.localStorageItem('type') == 'admin' && loginService.user | async">Admin</a></li>
+  <li><a routerLink="/student" *ngIf="app.localStorageItem('type') == 'student' && loginService.user | async" > Student</a></li>
+  <li><a routerLink="/" (click)="logout()" *ngIf="loginService.user | async"> Logout</a></li>
+  <li><a routerLink="/login" *ngIf="!(loginService.user | async)">Inloggen</a></li>
+</ul>

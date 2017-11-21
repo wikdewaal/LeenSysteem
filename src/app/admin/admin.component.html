@@ -1,0 +1,16 @@
+<div>
+<h1 *ngIf="loginService.user | async">Welcome  {{ (loginService.user | async)?.email }}!</h1>
+<h1 *ngIf="loginService.user | async">Je uid:  {{ (loginService.user | async)?.uid }}!</h1>
+<h1 *ngIf="app.localStorageItem('type') == 'admin' && loginService.user | async">Je bent ingelogd als een admin  !</h1>
+
+</div>
+
+<div class="center">
+  <h1>Admin paneel </h1>
+  <li>Hardware
+      <ol>
+          <li><a routerLink="/hardware" *ngIf="app.localStorageItem('type') == 'admin' && loginService.user | async">Toevoegen Hardware</a></li>
+          <li><a routerLink="/uitgeleende-hardware" *ngIf="app.localStorageItem('type') == 'admin' && loginService.user | async">Inzien uitgeleende hardware</a></li>
+      </ol>
+  </li>
+</div>

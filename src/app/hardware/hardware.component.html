@@ -1,0 +1,24 @@
+<div class="">  
+  <div>
+    <h1> Toevoegen Hardware </h1>
+  </div>
+  <div class="input">
+    <label>Naam: </label>
+    <input type="text" [(ngModel)]="naam" placeholder="naam" maxlength="20">
+  </div>
+  <div class="input">
+    <label>Beschrijving: </label>
+    <textarea rows="2" [(ngModel)]="beschrijving" cols="32" maxlength="100" wrap="hard" placeholder="  beschrijving"></textarea>
+  </div>
+  <div class="input">
+    <label>Type: </label>
+    <input type="text" [(ngModel)]="type" placeholder="type" maxlength="20">
+  </div>
+  <div class="input">
+    <label>Aantal: </label>
+    <input type="number" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" [(ngModel)]="aantal" min="1" max="10000" required>  <span class="bold-red">{{errormsg}} </span>
+  </div>
+  <div class="submit">
+    <button (click)="ToevoegenHardware()" [disabled]="!naam || !beschrijving || !type || !aantal">Toevoegen</button>   <span class="bold-green">{{succesmsg}}</span>
+  </div>
+</div>
